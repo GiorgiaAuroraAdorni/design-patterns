@@ -9,13 +9,13 @@
 <body>
 
 Enter two numeric values
-<form name="frm" method="get" action="/FrontController-IF/FrontController">
+<form name="frm" method="get" action="/AdorniBassoCeredaFerri/FrontController">
 Enter value a: <input type="text" name="a">
 Enter value b: <input type="text" name="b">
 <button type="submit" name="command" value="math.SumNumbers">Sum</button>
 </form>
 
-go <a href="/FrontController-IF/index.jsp">back</a>
+go <a href="/AdorniBassoCeredaFerri/index.jsp">back</a>
 <h2></h2>
 </body>
 </html>

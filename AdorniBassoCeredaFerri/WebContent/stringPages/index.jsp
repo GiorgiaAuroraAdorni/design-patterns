@@ -9,11 +9,11 @@
 <body>
 
 Click submit and I will show the hidden text
-<form name="frm" method="get" action="/FrontController-IF/FrontController">
+<form name="frm" method="get" action="/AdorniBassoCeredaFerri/FrontController">
 <button type="submit" name="command" value="string.toUpperCase">Show Text</button>
 </form>
 
-go <a href="/FrontController-IF/index.jsp">back</a>
+go <a href="/AdorniBassoCeredaFerri/index.jsp">back</a>
 
 <h2></h2>
 </body>
