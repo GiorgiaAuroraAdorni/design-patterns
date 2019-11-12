@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<jsp:useBean id="manipulator" class="model.string.StringManipulator" scope="request"/>
-
+<%
+Double total=(Double)request.getAttribute("total");
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -11,9 +12,9 @@
 <body>
 
 <p>
-The result is <%=manipulator.getText()%>. 
+The result is <%=total%>. 
 </p>
 
-Go <a href="stringPages/index.jsp">back</a> 
+Go <a href="loginPages/index.jsp">back</a> 
 </body>
 </html>
