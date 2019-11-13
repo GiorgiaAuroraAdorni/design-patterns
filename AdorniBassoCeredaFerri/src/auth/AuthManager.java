@@ -22,6 +22,7 @@ public class AuthManager {
 	
 	public boolean login(String username, String password) {
 		Optional<User> selectedUser = UserManager
+											.getShared()
 											.getUsers()
 											.stream()
 											.filter(user ->

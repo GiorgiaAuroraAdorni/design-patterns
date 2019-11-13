@@ -26,7 +26,7 @@ public class RegisterCommand extends AbstractCommand {
 		String country = request.getParameter("country");
 	
 		try {
-			UserManager.createUser(new User(username, password, name, email, city, country, Role.READER));
+			UserManager.getShared().createUser(new User(username, password, name, email, city, country, Role.READER));
 		} catch (ExistingUserException e) {
 			throw new RuntimeException(e);
 		}
