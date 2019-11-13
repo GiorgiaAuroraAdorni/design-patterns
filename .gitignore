@@ -2,6 +2,22 @@
 # Created by https://www.gitignore.io/api/java,macos,eclipse,java-web
 # Edit at https://www.gitignore.io/?templates=java,macos,eclipse,java-web
 
+### LaTeX ###
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.gz
+
 ### Eclipse ###
 .metadata
 bin/
