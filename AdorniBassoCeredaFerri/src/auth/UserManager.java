@@ -12,10 +12,10 @@ import model.auth.User;
 public class UserManager {
 	
 	private static List<User> users = new ArrayList<User> (Arrays.<User>asList(
-			new User ("mbasso", "mbassopassword", "Matteo", "bassom@usi.ch", "Lugano", "Switzerland", User.Roles.ADMIN),
-			new User ("mferri", "mferripassword", "Marco", "ferrim@usi.ch", "Lugano", "Switzerland", User.Roles.ADMIN),
-			new User ("gadorni", "gadornipassword", "Giorgia", "adornig@usi.ch", "Lugano", "Switzerland", User.Roles.ADMIN),
-			new User ("ecereda", "eceredapassword", "Elia", "ceredae@usi.ch", "Lugano", "Switzerland", User.Roles.ADMIN)
+			new User ("mbasso", "mbassopassword", "Matteo Basso", "bassom@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
+			new User ("mferri", "mferripassword", "Marco Ferri", "ferrima@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
+			new User ("gadorni", "gadornipassword", "Giorgia Adorni", "adorng@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
+			new User ("ecereda", "eceredapassword", "Elia Cereda", "cerede@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN)
 	));
 	
 	public static void createUser(User user) throws ExistingUserException {

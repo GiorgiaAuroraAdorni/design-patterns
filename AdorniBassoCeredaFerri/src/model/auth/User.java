@@ -2,7 +2,7 @@ package model.auth;
 
 public class User {
 
-	public enum Roles { ADMIN, READER }
+	public enum Role { ADMIN, READER }
 
 	private String username;
 	private String password;
@@ -10,9 +10,9 @@ public class User {
 	private String email;
 	private String city;
 	private String country;
-	private Roles role;
+	private Role role;
 	
-	public User(String username, String password, String name, String email, String city, String country, Roles role) {
+	public User(String username, String password, String name, String email, String city, String country, Role role) {
 		this.username = username;
 		this.password = password;
 		this.name = name;
@@ -70,11 +70,11 @@ public class User {
 		this.country = country;
 	}
 	
-	public Roles getRole() {
+	public Role getRole() {
 		return role;
 	}
 	
-	public void setRole(Roles role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 	
