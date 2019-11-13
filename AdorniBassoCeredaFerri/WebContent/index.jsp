@@ -1,4 +1,4 @@
-<%@ page import="view.user.UserHelper"%>
+<%@ page import="view.auth.AuthHelper"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,18 +12,16 @@
 
 
 	<%
-		String username = UserHelper.getLoggedUsername();
-		boolean isAuthenticated = (username != null);
-		boolean isAdmin = UserHelper.getLoggedIsAdmin();
+		AuthHelper auth = (AuthHelper)request.getAttribute("authHelper");
 	%>
 
 	<h2>
 		Benvenuto
-		<%=username%>!
+		<%=auth.getUsername()%>!
 	</h2>
 
 	<c:choose>
-		<c:when test="${UserHelper.getLoggedUsername() != null}">
+		<c:when test="${auth.isAuthenticated()}">
 			Logged.
 			
 			<form name="frm" method="post" action="/AdorniBassoCeredaFerri/FrontController">

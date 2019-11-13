@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import auth.AuthManager;
+import model.auth.User;
+import view.auth.AuthHelper;
 
 @WebFilter(
 	urlPatterns = { "/*" },
@@ -57,10 +59,12 @@ public class AuthFilter implements Filter {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-        if (
-			!isExcluded(httpRequest) &&
-			new AuthManager(httpRequest.getSession()).getUser() == null
-		) {
+        AuthManager auth = new AuthManager(httpRequest.getSession());
+        User currentUser = auth.getUser();
+        
+        request.setAttribute("authHelper", new AuthHelper(currentUser));
+        
+        if (!isExcluded(httpRequest) && currentUser == null) {
         	httpResponse.sendRedirect("/login");
         	return;
         }
