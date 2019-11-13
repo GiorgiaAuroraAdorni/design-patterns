@@ -13,7 +13,7 @@
 
 	<%
 		String username = UserHelper.getLoggedUsername();
-		boolean isAuthenticated = !username.equals(null);
+		boolean isAuthenticated = (username != null);
 		boolean isAdmin = UserHelper.getLoggedIsAdmin();
 	%>
 
@@ -23,13 +23,23 @@
 	</h2>
 
 	<c:choose>
-		<c:when test="${!username.equals(null)}">
-			Logged
+		<c:when test="${UserHelper.getLoggedUsername() != null}">
+			Logged.
+			
+			<form name="frm" method="post" action="/AdorniBassoCeredaFerri/FrontController">
+				<button type="submit" name="command" value="auth.Logout">Logout</button>
+			</form>
 		</c:when>
 		<c:otherwise>
-        	Not logged
+        	Not logged. 
+        	
+        	<form name="frm" method="get" action="/AdorniBassoCeredaFerri/login">
+				<button type="submit">Login</button>
+			</form>
 		</c:otherwise>
 	</c:choose>
+	
+	
 
 
 </body>
