@@ -10,12 +10,16 @@ public class AuthHelper {
 	public AuthHelper(User user) {
 		this.user = user;
 	}
-
-	public String getUsername() {		
-		return (this.user != null) ? this.user.getUsername() : null;
+	
+	public boolean isAuthenticated() {
+		return (this.user != null);
 	}
 	
 	public boolean isAdmin() {	
-		return (this.user != null) && (this.user.getRole() == Role.ADMIN);
+		return (this.isAuthenticated()) && (this.user.getRole() == Role.ADMIN);
+	}
+	
+	public String getUsername() {		
+		return (this.isAuthenticated()) ? this.user.getUsername() : null;
 	}
 }
