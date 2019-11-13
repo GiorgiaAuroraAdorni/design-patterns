@@ -8,6 +8,7 @@ public class User {
 	private String email;
 	private String city;
 	private String country;
+	
 	public String getUsername() {
 		return username;
 	}

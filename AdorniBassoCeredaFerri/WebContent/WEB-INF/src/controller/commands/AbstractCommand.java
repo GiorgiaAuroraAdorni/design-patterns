@@ -19,5 +19,6 @@ public abstract class AbstractCommand {
 		this.response = response;
 	}
 	
-	public abstract void process() throws ServletException, IOException;
+	public abstract void processGet() throws ServletException, IOException;
+	public abstract void processPost() throws ServletException, IOException;
 }

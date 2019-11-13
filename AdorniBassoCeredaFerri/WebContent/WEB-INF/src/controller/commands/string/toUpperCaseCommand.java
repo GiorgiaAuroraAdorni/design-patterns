@@ -6,9 +6,8 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-import model.string.StringManipulator;
-
 import controller.commands.AbstractCommand;
+import model.database.StringManipulator;
 
 public class toUpperCaseCommand extends AbstractCommand {
 

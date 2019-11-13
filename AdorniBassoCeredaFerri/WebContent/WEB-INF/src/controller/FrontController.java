@@ -36,11 +36,8 @@ public class FrontController extends HttpServlet {
 		super.init(config);
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	private AbstractCommand createComand(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		//retrieve command name
 		String commandName = request.getParameter("command");
 		commandName = "controller.commands." + commandName + "Command";
@@ -61,23 +58,46 @@ public class FrontController extends HttpServlet {
 			command = (AbstractCommand) commandClass.newInstance();
 		} catch (InstantiationException e) {
 			getServletContext().getRequestDispatcher("/failToCreateCommand.jsp").forward(request, response);
-			return;
+			return null;
 		} catch (IllegalAccessException e) {
 			getServletContext().getRequestDispatcher("/failToCreateCommand.jsp").forward(request, response);
+			return null;
+		}
+		return command;
+	}
+	
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		AbstractCommand command = createComand(request, response);
+		if (command == null) {
 			return;
 		}
 		
-		
 		//run command
 		command.init(getServletContext(), request, response);
-		command.process();
+		command.processGet();
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		AbstractCommand command = createComand(request, response);
+		
+		if (command == null) {
+			return;
+		}
+		
+		//run command
+		command.init(getServletContext(), request, response);
+		command.processPost();
+		
 	}
 
 }
