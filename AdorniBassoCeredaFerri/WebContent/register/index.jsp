@@ -7,14 +7,22 @@
 </head>
 <body>
 
-<h1>Login</h1>
+<h1>Create a new account</h1>
 <form name="frm" method="post" action="/AdorniBassoCeredaFerri/FrontController">
+<p>
 <label for="username">Username</label><input type="text" name="username"><br>
 <label for="password">Password</label><input type="password" name="password"><br>
-<button type="submit" name="command" value="auth.Login">Login</button>
+</p>
+
+<p>
+<label for="name">Name</label><input type="text" name="name"><br>
+<label for="email">Email</label><input type="text" name="email"><br>
+<label for="city">City</label><input type="text" name="city"><br>
+<label for="country">Country</label><input type="text" name="country"><br>
+</p>
+
+<button type="submit" name="command" value="auth.Register">Register</button>
 </form>
 
-go <a href="/AdorniBassoCeredaFerri/index.jsp">back</a>
-<h2></h2>
 </body>
 </html>
