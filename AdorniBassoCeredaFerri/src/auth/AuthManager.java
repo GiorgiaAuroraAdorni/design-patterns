@@ -16,7 +16,7 @@ public class AuthManager {
 		this.session = session;
 	}
 	
-	public User getLoggedUser() {
+	public User getUser() {
 		return (User) session.getAttribute(LOGGED_USER_KEY);
 	}
 	
