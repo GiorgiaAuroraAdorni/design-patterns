@@ -7,13 +7,11 @@ public class RegisterCommand extends AbstractCommand {
 
 	@Override
 	public void processGet() throws IOException {
-		// TODO Auto-generated method stub
-		
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public void processPost() throws IOException {
-		// TODO Auto-generated method stub
-		
+		response.sendRedirect("/AdorniBassoCeredaFerri/");		
 	}
 }

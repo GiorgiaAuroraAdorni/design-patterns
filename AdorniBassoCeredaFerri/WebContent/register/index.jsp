@@ -24,5 +24,9 @@
 <button type="submit" name="command" value="auth.Register">Register</button>
 </form>
 
+<p>
+Go <a href="/AdorniBassoCeredaFerri/">back</a>.
+</p>
+
 </body>
 </html>

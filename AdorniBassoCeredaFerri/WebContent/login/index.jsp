@@ -9,12 +9,17 @@
 
 <h1>Login</h1>
 <form name="frm" method="post" action="/AdorniBassoCeredaFerri/FrontController">
+<p>
 <label for="username">Username</label><input type="text" name="username"><br>
 <label for="password">Password</label><input type="password" name="password"><br>
+</p>
+
 <button type="submit" name="command" value="auth.Login">Login</button>
 </form>
 
-go <a href="/AdorniBassoCeredaFerri/index.jsp">back</a>
-<h2></h2>
+<p>
+Go <a href="/AdorniBassoCeredaFerri/">back</a>.
+</p>
+
 </body>
 </html>

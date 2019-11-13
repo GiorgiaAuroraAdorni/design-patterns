@@ -12,6 +12,6 @@ public class LoginCommand extends AbstractCommand {
 
 	@Override
 	public void processPost() throws IOException {
-		// TODO Auto-generated method stub	
+		response.sendRedirect("/AdorniBassoCeredaFerri/");
 	}
 }
