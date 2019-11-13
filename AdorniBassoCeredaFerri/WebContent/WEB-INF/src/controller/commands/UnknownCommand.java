@@ -8,10 +8,14 @@ import javax.servlet.ServletException;
 
 public class UnknownCommand extends AbstractCommand {
 
+	@Override
+	public void processGet() throws ServletException, IOException {
+		sc.getRequestDispatcher("/unknownCommand.jsp").forward(request, response);		
+	}
 
 	@Override
-	public void process() throws ServletException, IOException{
-		sc.getRequestDispatcher("/unknownCommand.jsp").forward(request, response);
+	public void processPost() throws ServletException, IOException {
+		sc.getRequestDispatcher("/unknownCommand.jsp").forward(request, response);	
 	}
 
 }
