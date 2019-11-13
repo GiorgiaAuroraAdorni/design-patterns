@@ -7,7 +7,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 import controller.commands.AbstractCommand;
-import model.user.SimpleMath;
+import model.auth.SimpleMath;
 
 public class SumNumbersCommand extends AbstractCommand {
 
