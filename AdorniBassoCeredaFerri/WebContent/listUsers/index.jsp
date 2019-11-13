@@ -4,18 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Front Controller Example</title>
+<title>User Authentication Example</title>
 </head>
 <body>
 
-Enter two numeric values
+Click submit and I will show the hidden text
 <form name="frm" method="get" action="/AdorniBassoCeredaFerri/FrontController">
-Enter value a: <input type="text" name="a">
-Enter value b: <input type="text" name="b">
-<button type="submit" name="command" value="math.SumNumbers">Sum</button>
+<button type="submit" name="command" value="string.toUpperCase">Show Text</button>
 </form>
 
 go <a href="/AdorniBassoCeredaFerri/index.jsp">back</a>
+
 <h2></h2>
 </body>
 </html>

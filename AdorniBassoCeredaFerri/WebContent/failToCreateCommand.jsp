@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Front Controller Example</title>
+<title>User Authentication Example</title>
 </head>
 <body>
 Error: failed to create the command.

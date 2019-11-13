@@ -72,6 +72,7 @@ public class FrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		AbstractCommand command = createComand(request, response);
+		
 		if (command == null) {
 			return;
 		}

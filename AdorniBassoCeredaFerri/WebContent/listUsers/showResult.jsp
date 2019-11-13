@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Front Controller Example</title>
+<title>User Authentication Example</title>
 </head>
 <body>
 
@@ -14,6 +14,6 @@
 The result is <%=manipulator.getText()%>. 
 </p>
 
-Go <a href="registerUserPages/index.jsp">back</a> 
+Go <a href="listUserPages/index.jsp">back</a> 
 </body>
 </html>
