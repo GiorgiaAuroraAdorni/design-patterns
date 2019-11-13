@@ -7,14 +7,19 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 import controller.commands.AbstractCommand;
-import model.database.StringManipulator;
 
 public class toUpperCaseCommand extends AbstractCommand {
 
 	@Override
-	public void process() throws ServletException, IOException {
-		request.setAttribute("manipulator", new StringManipulator());
-		sc.getRequestDispatcher("/stringPages/showResult.jsp").forward(request, response);
+	public void processGet() throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void processPost() throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

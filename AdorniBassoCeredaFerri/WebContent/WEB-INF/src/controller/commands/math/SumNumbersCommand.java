@@ -7,25 +7,19 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 import controller.commands.AbstractCommand;
-import model.user.SimpleMath;
 
 public class SumNumbersCommand extends AbstractCommand {
 
+
 	@Override
-	public void process() throws ServletException, IOException {
+	public void processGet() throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		
-		//retrieve parameters from request
-		double a = Double.parseDouble(request.getParameter("a"));
-		double b = Double.parseDouble(request.getParameter("b"));
+	}
+
+	@Override
+	public void processPost() throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		
-		//obtain reference to model object
-		SimpleMath simpleMath = new SimpleMath();
-		
-		//send request to the model		
-		double total = simpleMath.sum(a, b);
-		
-		//select next view
-		request.setAttribute("total", total);
-		
-		sc.getRequestDispatcher("/mathPages/showResult.jsp").forward(request, response);	}
+	}
 }
