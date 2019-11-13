@@ -23,9 +23,11 @@ public class UserManager {
 	
 	private List<User> users = new ArrayList<User> (Arrays.<User>asList(
 			new User ("mbasso", "mbassopassword", "Matteo Basso", "bassom@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
-			new User ("mferri", "mferripassword", "Marco Ferri", "ferrima@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
+			new User ("mferri", "123", "Marco Ferri", "ferrima@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
 			new User ("gadorni", "gadornipassword", "Giorgia Adorni", "adorng@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
-			new User ("ecereda", "eceredapassword", "Elia Cereda", "cerede@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN)
+			new User ("ecereda", "eceredapassword", "Elia Cereda", "cerede@usi.ch", "Lugano", "Switzerland", User.Role.ADMIN),
+			new User ("admin", "admin", "Admin", "admin@swe.it", "Lugano", "Switzerland", User.Role.ADMIN),
+			new User ("reader", "reader", "Reader", "reader@swe.it", "Lugano", "Switzerland", User.Role.READER)
 	));
 	
 	public void createUser(User user) throws ExistingUserException {
