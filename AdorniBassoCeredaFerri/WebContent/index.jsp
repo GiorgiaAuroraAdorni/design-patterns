@@ -17,6 +17,12 @@
 		<form name="frm" method="post" action="/AdorniBassoCeredaFerri/FrontController">
 			<button type="submit" name="command" value="auth.Logout">Logout</button>
 		</form>
+		
+		<c:choose>
+			<c:when test="${authHelper.isAdmin()}">
+			<p>You have the power!</p>
+			</c:when>
+		</c:choose>
 	</c:when>
 	<c:otherwise>
        	<h2>Welcome, guest!</h2>
