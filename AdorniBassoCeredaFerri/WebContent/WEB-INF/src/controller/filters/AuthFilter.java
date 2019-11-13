@@ -21,7 +21,7 @@ import auth.AuthManager;
 
 @WebFilter(
 	urlPatterns = { "/*" },
-	initParams = { @WebInitParam(name = "excludePublicRoutes", value = "/ /login") }
+	initParams = { @WebInitParam(name = "excludePublicRoutes", value = "/ /login /register") }
 )
 public class AuthFilter implements Filter {
 
