@@ -32,6 +32,7 @@
 						<td>Email</td>
 						<td>City</td>
 						<td>Password</td>
+						<td>Role</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -42,13 +43,14 @@
 							<td><c:out value = "${item.getEmail()}"/></td>
 							<td><c:out value = "${item.getCity()}"/></td>
 							<td><c:out value = "${item.getPassword()}"/></td>
+							<td><c:out value = "${item.getRole()}"/></td>
 						</tr>
 				    </c:forEach>
 				</tbody>
 			</table>
 		</c:when>
 		<c:otherwise>
-			No user registered
+			No users registered.
 		</c:otherwise>
 	</c:choose>
 	

@@ -36,7 +36,7 @@
 					</p>
 				</c:when>
 				<c:otherwise>
-					You are a normal user
+					You are a normal user.
 				</c:otherwise>
 			</c:choose>
 		</c:when>
