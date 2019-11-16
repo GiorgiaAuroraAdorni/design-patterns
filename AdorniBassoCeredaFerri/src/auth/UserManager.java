@@ -11,6 +11,8 @@ import model.auth.User;
 public class UserManager {
 	
 	/** Singleton **/
+	private UserManager() {}
+	
 	private static UserManager sharedManager = null;
 	
 	public static UserManager getShared() {
