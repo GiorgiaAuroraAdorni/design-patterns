@@ -27,22 +27,22 @@
 			<table>
 				<thead>
 					<tr>
-						<td>Name</td>
 						<td>Username</td>
+						<td>Password</td>
+						<td>Name</td>
 						<td>Email</td>
 						<td>City</td>
-						<td>Password</td>
 						<td>Role</td>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${users}" var="item">
 						<tr>
-							<td><c:out value = "${item.getName()}"/></td>
 							<td><c:out value = "${item.getUsername()}"/></td>
+							<td><c:out value = "${item.getPassword()}"/></td>
+							<td><c:out value = "${item.getName()}"/></td>
 							<td><c:out value = "${item.getEmail()}"/></td>
 							<td><c:out value = "${item.getCity()}"/></td>
-							<td><c:out value = "${item.getPassword()}"/></td>
 							<td><c:out value = "${item.getRole()}"/></td>
 						</tr>
 				    </c:forEach>
