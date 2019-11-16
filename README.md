@@ -13,6 +13,8 @@
 
 ### Template view
 
+For example, the user page
+
 
 
 ### Front controller
@@ -52,5 +54,14 @@ provided as composable components Logging
 
 Authentication Data conversion Internationalisation ... 
 
+
+
+
+
+Code executed before and after the request
+
+
+
 ### Singleton
 
+Used since we do not have a database. Of the class UserManager, only one instance can exists.
