@@ -2,9 +2,7 @@ package controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +18,24 @@ import controller.commands.UnknownCommand;
 @WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	public static Class<?> getCommandClass(HttpServletRequest request) {
+		//retrieve command name
+		String commandName = request.getParameter("command");
+		commandName = "controller.commands." + commandName + "Command";
+		
+		//retrieve command implementation
+		//using reflection the front controller works for any
+		//number of implemented commands 
+		Class<?> commandClass;
+		try {
+			commandClass = Class.forName(commandName);
+		} catch (ClassNotFoundException e) {
+			commandClass = UnknownCommand.class;
+		}
+		
+		return commandClass;
+	}
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,19 +54,7 @@ public class FrontController extends HttpServlet {
 
 	private AbstractCommand createComand(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//retrieve command name
-		String commandName = request.getParameter("command");
-		commandName = "controller.commands." + commandName + "Command";
-		
-		//retrieve command implementation
-		//using reflection the front controller works for any
-		//number of implemented commands 
-		Class commandClass;
-		try {
-			commandClass = Class.forName(commandName);
-		} catch (ClassNotFoundException e) {
-			commandClass = UnknownCommand.class;
-		}
+		Class<?> commandClass = FrontController.getCommandClass(request);
 		
 		//create command
 		AbstractCommand command;

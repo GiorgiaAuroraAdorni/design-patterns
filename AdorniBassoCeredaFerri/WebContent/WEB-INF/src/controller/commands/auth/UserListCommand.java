@@ -1,18 +1,17 @@
 package controller.commands.auth;
 
-import auth.AuthManager;
 import auth.UserManager;
 import controller.commands.AbstractCommand;
-import exception.ExistingUserException;
 import model.auth.User;
 import model.auth.User.Role;
+import annotation.Authorize;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.ServletException;
 
+@Authorize(roles = {Role.ADMIN})
 public class UserListCommand extends AbstractCommand {
 
 	@Override

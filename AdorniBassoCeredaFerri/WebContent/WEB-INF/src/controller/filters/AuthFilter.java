@@ -13,18 +13,16 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import auth.AuthManager;
+import controller.FrontController;
 import model.auth.User;
 import view.auth.AuthHelper;
+import annotation.Authorize;
 
-@WebFilter(
-	urlPatterns = { "/*" },
-	initParams = { @WebInitParam(name = "excludePublicRoutes", value = "/ /login /register") }
-)
+@WebFilter("/*")
 public class AuthFilter implements Filter {
 
     private static Set<String> excluded;
@@ -64,12 +62,21 @@ public class AuthFilter implements Filter {
         
         request.setAttribute("authHelper", new AuthHelper(currentUser));
         
-        if (!isExcluded(httpRequest) && currentUser == null) {
-        	httpResponse.sendRedirect("/login");
+        // get command class and check auth annotation
+        Class<?> commandClass = FrontController.getCommandClass(httpRequest);
+        Authorize authorizeAnnotation = commandClass.getAnnotation(Authorize.class);
+        
+        // redirect to login if user is not authorized
+        if (
+        	authorizeAnnotation == null ||
+        	currentUser != null &&
+        	Arrays.asList(authorizeAnnotation.roles()).contains(currentUser.getRole())
+        ) {
+            chain.doFilter(request, response);
+        } else {
+        	httpResponse.sendRedirect("/AdorniBassoCeredaFerri");
         	return;
         }
-        
-        chain.doFilter(request, response);
 	}
 
 }

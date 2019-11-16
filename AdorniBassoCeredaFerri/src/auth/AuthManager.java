@@ -31,7 +31,7 @@ public class AuthManager {
 											)
 											.findFirst();
 		
-		if (selectedUser.isEmpty()) {
+		if (!selectedUser.isPresent()) {
 			return false;
 		}
 
