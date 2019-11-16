@@ -8,3 +8,10 @@
 * **Mattero Basso** 
 * **Elia Cereda** 
 * **Marco Ferri**
+
+## Design pattern
+
+### Template view
+### Front controller
+### Intercepting Filter
+### Singleton
