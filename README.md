@@ -9,24 +9,20 @@
 * **Elia Cereda** 
 * **Marco Ferri**
 
-## Design pattern
+## Design patterns
 
-### Template view
+### Front Controller
 
-For example, the user page
-
-
-
-### Front controller
-
-
+Initially, we decided to use the implementation of the Front Controller pattern in order to reduce the amount of repeated boiler plate code. In the current implementation, we have not found many advantages in its use since we didn't found responsabilities to assign to the Front Cotroller.
 
 ### Intercepting Filter
 
-Code executed before and after the request
+To implement the authentication logic, we used the Intercepting Filter that verifies if the user can acces to a certain page and otherwised redirects him to the home page.
 
+### Template View
 
+The implementation of the user interface has been speeded up by adopting the Template View patter. An example of the template is the page with the users list.
 
 ### Singleton
 
-Used since we do not have a database. Of the class UserManager, only one instance can exists.
+Since the responsability to memorise the registered users has been assigned to the UserManager class. Since we do not have a database, to ensure that a single istance of this class can exists in the application we adopted the Singleton patter.
